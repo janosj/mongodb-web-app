@@ -7,7 +7,7 @@ const app = express()
 // Introduced to support troubleshooting on Kubernetes.
 var fs = require('fs');
 var util = require('util');
-var log_file = fs.createWriteStream('debug/debug.log', {flags : 'w'});
+var log_file = fs.createWriteStream('debug.log', {flags : 'w'});
 var log_stdout = process.stdout;
 console.log = function(d) {
     log_file.write(util.format(d) + '\n');
